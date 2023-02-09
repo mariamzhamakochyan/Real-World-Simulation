@@ -5,6 +5,7 @@ import datetime
 now = datetime.datetime.now()
 localtime = time.asctime( time.localtime(time.time()))
 
+
 class Universe:
 
     def __init__(self):
@@ -26,7 +27,7 @@ class Universe:
         input()
         print(u.matter())
         input("Press enter to continue")
-        print("What do you want to know about? (Chose one of these)\n'S' if Sun\n'M' if Moon\n'E' if Earth")
+        # print("What do you want to know about? (Chose one of these)\n'S' if Sun\n'M' if Moon\n'E' if Earth")
 
 #Star is an abstract class here
 #class Star---<composition>Universe
@@ -54,16 +55,16 @@ class Sun(Star):
 
 #class Planet---<composition>Universe
 class Planet:
-    def __init__(self, galaxy, name, age, size):
+    def __init__(self, galaxy, name, age, surface_area):
         self.galaxy = galaxy
         self.name = name
         self.age = age
-        self.size = size
+        self.surface_area = surface_area
 
 #class Earth--|inheritance>Planet
 class Earth(Planet):
-    def __init__(self, galaxy, name, age, size, continent, ocean):
-        super().__init__(galaxy, name, age, size)
+    def __init__(self, galaxy, name, age, surface_area, continent, ocean):
+        super().__init__(galaxy, name, age, surface_area)
         self.continent = continent
         self.ocean = ocean
 
@@ -76,16 +77,15 @@ class Earth(Planet):
     def get_age(self):
         return self.age
 
-    def get_size(self):
-        return self.size
+    def get_surface_area(self):
+        return self.surface_area
 
     def description(self):
-        print(f'        Galaxy name: {galaxy_name()}')
-        print(f'        Planet name: {planet_name()}')
-        print(f'        Age: {age()}')
-        print(f'        Size: {size}')
-        print(f'Earth is divided into {continent} continents, and {ocean} oceans')
-
+        print(f'        Galaxy name: {e.galaxy_name()}')
+        print(f'        Planet name: {e.planet_name()}')
+        print(f'        Age: {e.get_age()}')
+        print(f'        Surface area: {e.get_surface_area()}')
+        print(f'Earth is divided into {self.continent} continents, and {self.ocean} oceans')
 
 #class Oxygen---<composition>Earth
 class Oxygen:
