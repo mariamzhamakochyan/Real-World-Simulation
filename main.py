@@ -200,3 +200,6 @@ class Animal(Animate):
     
     def get_species(self):
         return self.species
+
+
+# make Car, Truck, Motorcycle, Boat, and Airplane. Inherit from the Vehicle class
