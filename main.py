@@ -29,7 +29,7 @@ class Universe:
         input("Press enter to continue")
         # print("What do you want to know about? (Chose one of these)\n'S' if Sun\n'M' if Moon\n'E' if Earth")
 
-#Star is an abstract class here
+#Star: abstract class
 #class Star---<composition>Universe
 class Star:
     def __init__(self, name):
